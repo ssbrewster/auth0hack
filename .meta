@@ -1,0 +1,3 @@
+SPOTIFY_URL=https://api.spotify.com/v1/search?type=playlist
+SPOTIFY_TOKEN_URI=https://accounts.spotify.com/api/token
+OPEN_WEATHER_URL=http://api.openweathermap.org/data/2.5/weather

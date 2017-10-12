@@ -15,19 +15,21 @@ Clone this repository then create the webtask:
 
     wt init
 
-Then pass in parameters that include the api key you got from openweathermap.org and a city, zip or coordinates of your choice:
+Populate your `.secrets` file. An example file is included `.secrets-ex`.
 
-    wt create weather-playlist.js --param city="New York" --secret WEATHER_API_KEY=yourapikeyfromopenweathermap
+Then pass in parameters that include a city, zip or coordinates of your choice:
+
+    wt create weather-playlist.js --bundle --param city="New York" --secrets-file ./.secrets --meta-file ./.meta
 
 This returns a url that you can use to get your playlist like so:
 
-    open "$(curl https://webtask.it.auth0.com/api/run/wt-your-reg/weather-playlist\?webtask_no_cache\=1 | awk -F'\"' '{print $2}')"""
+    open "$(curl https://wt-ssbrewster-gmail_com-0.run.webtask.io/auth0hack | awk -F'\"' '{print $2}')"""
 
 > The above example uses the `open` utility in OSX, use `xgd-open` in Linux distros.
 
 Even better setup a daily cron job:
 
-    crontab -l | { cat; echo "0 9 * * * open "$(curl https://webtask.it.auth0.com/api/run/wt-your-reg/weather-playlist\?webtask_no_cache\=1 | awk -F'\"' '{print $2}')""; } | crontab -" }
+    crontab -l | { cat; echo "0 9 * * * open "$(curl https://wt-ssbrewster-gmail_com-0.run.webtask.io/auth0hack | awk -F'\"' '{print $2}')""; } | crontab -" }
 
 ## Licenses
 
