@@ -1,7 +1,7 @@
 'use strict';
 
-const Weather = require('./weather')
-const Spotify = require('./spotify')
+const Weather = require('./open-weather/weather')
+const Spotify = require('./spotify/spotify')
 
 const musicWeatherMap = {
   'Additional': ['folk', 'pop', 'hip%20hop', 'shoegaze', 'house', 'metal', 'classic%20rock'],
